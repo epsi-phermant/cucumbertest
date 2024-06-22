@@ -11,5 +11,8 @@ import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 @IncludeEngines("cucumber")
 @SelectPackages("webdriver")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty")
+@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "html:target/cucumber-html-report")
+@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "json:target/cucumber.json")
+@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "junit:target/cucumber.xml")
 public class RunCucumberTest {
 }
