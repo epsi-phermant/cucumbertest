@@ -25,7 +25,7 @@ jobs:
     - name: Set up chromedriver
       uses: browser-actions/setup-chrome@v1
       with:
-        chrome-version: 120
+        chrome-version: 126
         install-chromedriver: true
     
     - name: Set up JDK 17
