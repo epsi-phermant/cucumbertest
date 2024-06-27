@@ -11,14 +11,25 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import java.io.File;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+
 
 public class Stepdefs {
 
     // we will use chrome web driver
     private final ChromeOptions options = new ChromeOptions();
     private final WebDriver driver = new ChromeDriver(options);
+
+    public Stepdefs() {
+        String OS = System.getProperty("os.name");
+        System.out.print(OS);
+        if (!OS.contains("Windows")) {
+            options.setBinary(new File("/usr/bin/chrome"));
+        }
+    }
 
     // start with feature (adapted from google search)
     @Given("I am on the Google search page")
