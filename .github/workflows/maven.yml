@@ -24,10 +24,12 @@ jobs:
 
     - name: Set up chromedriver and check chrome version 
       uses: browser-actions/setup-chrome@v1
-      run: chrome --version
       with:
         chrome-version: 126
         install-chromedriver: true
+
+    - name: check chrome version 
+      run: chrome --version
     
     - name: Set up JDK 17
       uses: actions/setup-java@v3
