@@ -22,12 +22,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Set up chrome
+    - name: Set up chromedriver and check chrome version 
       uses: browser-actions/setup-chrome@v1
       run: chrome --version
-  
-    - name: Set up chromedriver
-      uses: browser-actions/setup-chrome@v1
       with:
         chrome-version: 126
         install-chromedriver: true
