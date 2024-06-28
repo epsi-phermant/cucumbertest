@@ -21,14 +21,15 @@ public class Stepdefs {
 
     // we will use chrome web driver
     private final ChromeOptions options = new ChromeOptions();
-    private final WebDriver driver = new ChromeDriver(options);
+    private final WebDriver driver;
 
     public Stepdefs() {
         String OS = System.getProperty("os.name");
         System.out.print(OS);
         if (!OS.contains("Windows")) {
-            options.setBinary(new File("/usr/bin/chrome"));
+            options.setBinary(new File("/usr/bin/google-chrome"));
         }
+        driver = new ChromeDriver(options);
     }
 
     // start with feature (adapted from google search)
